@@ -23,6 +23,8 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 19
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
       - name: Test
         run: |
           ./gradlew -Dkjs=false -Dknative=false -Dtest.java.version=${{ matrix.java-version }} build --stacktrace
