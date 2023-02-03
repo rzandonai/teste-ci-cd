@@ -27,7 +27,7 @@ jobs:
         run: chmod +x ./gradlew
       - name: Test
         run: |
-          ./gradlew -Dkjs=false -Dknative=false -Dtest.java.version=${{ matrix.java-version }} build --stacktrace
+          ./gradlew -Dkjs=false -Dknative=false -Dtest.java.version=19 build --stacktrace
   #Sonar's Job
   sonar:
     #Depends on test's job
