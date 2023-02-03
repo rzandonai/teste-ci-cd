@@ -15,17 +15,14 @@ jobs:
     #Job's steps
     steps:
       - name: Checkout
-          uses: actions/checkout@v3
-
+        uses: actions/checkout@v3
       - name: Validate Gradle Wrapper
         uses: gradle/wrapper-validation-action@v1
-
       - name: Configure JDK
         uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
           java-version: 19
-
       - name: Test
         run: |
           ./gradlew -Dkjs=false -Dknative=false -Dtest.java.version=${{ matrix.java-version }} build --stacktrace
