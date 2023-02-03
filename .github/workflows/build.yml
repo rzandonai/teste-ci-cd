@@ -88,8 +88,8 @@ jobs:
       #Set up Maven cache
       - name: Build with Gradle
         uses: gradle/gradle-build-action
-          with:
-            arguments: build
+        with:
+          arguments: build
       #Build the application using Maven
       - name: Upload JAR
         #This uploads artifacts from your workflow allowing you to share data between jobs and store data once a workflow is complete.
