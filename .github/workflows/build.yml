@@ -75,10 +75,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '19'
-
-      - name: Run Tests
-        run: mvn -B test
-      #Build the application using Maven
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Build
+        run: ./gradlew build
       - name: Upload JAR
         #This uploads artifacts from your workflow allowing you to share data between jobs and store data once a workflow is complete.
         uses: actions/upload-artifact@v2
